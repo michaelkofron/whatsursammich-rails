@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :sammiches, except: [:index]
   resources :users, only: [:show]
+  #need resources for sessions route, new session = sign in and delete session = signout
   get "/signup", to: "users#new"
   post "/signup", to: "users#create", as: :users
   root "application#home"
