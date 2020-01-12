@@ -1,0 +1,33 @@
+<html>
+<head>
+    <link rel="stylesheet" href="login_signup.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>hello</h1>
+    <a href="/">
+        <div class="logo" type="button" action="#">
+            <h1>whatsursammich🥪</h1>
+        </div>
+    </a>
+
+    <div class="body">
+        <div class="box">
+            <div class="header">
+                <h2 id="text">login</h2>
+            </div>
+            <%= form_tag do %>
+                Username:
+                <%= text_field_tag :username%><br>
+                Password:
+                <%= password_field_tag :password %>
+                <%= submit_tag "Sign In" %>
+            <% end %>
+        </div>
+
+        <div class="footer">
+            <p>Made with 🥪 by Michael Kofron</p>
+        </div>
+    </div>
+</body>

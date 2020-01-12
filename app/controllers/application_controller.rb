@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
     def home
         if logged_in?
+            @user = current_user
             render "user"
         else
             render "visitor"
