@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:800|Open+Sans:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    height: 100vh
+    background: rgb(90,159,128);
+    background: -moz-linear-gradient(133deg, rgba(90,159,128,1) 10%, rgba(208,232,140,1) 100%);
+    background: -webkit-linear-gradient(133deg, rgba(90,159,128,1) 10%, rgba(208,232,140,1) 100%);
+    background: linear-gradient(133deg, rgba(90,159,128,1) 10%, rgba(208,232,140,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5a9f80",endColorstr="#d0e88c",GradientType=1);
+}
+
+.logo h1 {
+    font-family: 'Dosis', sans-serif;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+a.home {
+    text-decoration: none;
+}
+
+
+
+div.text {
+    display: grid;
+    width: 90%;
+    height: 80%;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+div.text p {
+    display: flex;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.review-title h2 {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 3%;
+}
+
+.review-title a {
+    color: seagreen;
+}
+
+h1#title {
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 20px;
+    color: seagreen;
+    text-align: center;
+}
+
+.image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover; 
+}
+
+div.username {
+    display: block;
+    margin: auto;
+    margin-top: 3%;
+    width: 100%;
+    top: 70%;
+    height: 30px;
+}
+
+div.username h3 {
+    font-family: 'Hind Siliguri', sans-serif;
+    color: seagreen;
+    text-align: center;
+}
+
+img.image {
+    max-width: 150px;
+    max-height: 125px;
+    border-radius: 5px;
+    display: block;
+    margin: auto;
+}
+
+
+/* Mobile and Tablet Styles */
+@media only screen and (min-width: 300px) and (max-width: 960px) {
+    .body {
+        display: grid;
+        height: 30%;
+        width: 98%;
+        margin: auto;
+        background-color: white;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px -5px grey;
+    }
+
+    .picture-title {
+        display: grid;
+        height: 30%;
+        position: relative;
+        width: 98%;
+        margin: auto;
+        margin-bottom: 10px;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .review {
+        display: grid;
+        height: 15%;
+        width: 75%;
+        margin-top: 1%;
+        margin-left: 3%;
+        margin-bottom: 3%;
+        border-radius: 5px;
+        background-color: white;
+    }
+
+    div.review-title {
+        display: grid;
+        height: 5%;
+        width: 75%;
+        margin-top: 3%;
+        margin-left: 3%;
+        border-radius: 5px;
+        background-color: lightyellow;
+    }
+  }
+
+  /* Desktop Styles */
+  @media only screen and (min-width: 961px) {
+    .body {
+        display: grid;
+        height: 400px;
+        width: 700px;
+        margin: auto;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    .picture-title {
+        display: grid;
+        height: 400px;
+        width: 700px;
+        margin: auto;
+        background-color: white;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+
+    div.text p {
+        font-size: 20px;
+    }
+
+    .review {
+        display: grid;
+        height: 200px;
+        width: 500px;
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        background-color: white;
+        border-radius: 5px;
+    }
+
+    div.review-title {
+        display: grid;
+        height: 50px;
+        width: 500px;
+        margin: auto;
+        margin-top: 10px;
+        background-color: lightyellow;
+        border-radius: 5px;
+    }
+
+    html {
+        transform: scale(1.2);
+        overflow-x: hidden;
+    }
+
+    .logo {
+        padding-top: 160px;
+        padding-bottom: 20px;
+    }
+
+    .logo h1 {
+        font-family: 'Dosis', sans-serif;
+        color: white;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    
+
+
+  }

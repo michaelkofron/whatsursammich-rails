@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   #need resources for sessions route, new session = sign in and delete session = signout
   get "/signup", to: "users#new"
   post "/signup", to: "users#create", as: :users
+  get "/logout", to: "sessions#destroy"
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create", as: :users
   root "application#home"
 
 end

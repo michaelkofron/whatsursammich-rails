@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:800|Open+Sans:300&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body, html {
+    height: 100vh
+    background: rgb(90,159,128);
+    background: -moz-linear-gradient(133deg, rgba(90,159,128,1) 10%, rgba(208,232,140,1) 100%);
+    background: -webkit-linear-gradient(133deg, rgba(90,159,128,1) 10%, rgba(208,232,140,1) 100%);
+    background: linear-gradient(133deg, rgba(90,159,128,1) 10%, rgba(208,232,140,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5a9f80",endColorstr="#d0e88c",GradientType=1);
+}
+
+.body > div.box {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 5px 5px 5px -5px grey;
+}
+
+.logo h1 {
+    font-family: 'Dosis', sans-serif;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.box {
+    background: white;
+}
+
+.header {
+    text-align: center;
+}
+
+.header h2 {
+    padding-bottom: 10px;
+    font-family: 'Hind Siliguri', sans-serif;
+    color: seagreen;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+div.footer {
+    position: relative;
+    left: 0;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    box-shadow: none;
+}
+
+div.footer p {
+    font-family: 'Hind Siliguri', sans-serif;
+    color: white;
+    font-size: 15px;
+}
+  
+
+
+/* Mobile and Tablet Styles */
+@media only screen and (min-width: 300px) and (max-width: 960px) {
+    .body {
+        display: grid;
+        height: 50%;
+        width: 85%;
+        margin: auto;
+    }
+    
+  }
+
+  /* Desktop Styles */
+  @media only screen and (min-width: 961px) {
+    .body {
+        display: grid;
+        height: 500px;;
+        width: 500px;
+        margin: auto;
+    }
+
+    html {
+        transform: scale(1.2);
+        overflow-x: hidden;
+    }
+
+    .logo {
+        padding-top: 5%;
+    }
+
+    
+
+
+  }
