@@ -1,7 +1,7 @@
 class SammichesController < ApplicationController
 
     def new 
-        #sammich creation page, only available to users, if clicked redirects to login/signup
+
     end
 
     def edit
