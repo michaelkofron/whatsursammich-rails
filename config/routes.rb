@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   post "/signup", to: "users#create", as: :users
   get "/logout", to: "sessions#destroy"
   get "/login", to: "sessions#new"
-  post "/login", to: "sessions#create"
+  post "/login", to: "sessions#login"
+  match "/auth/facebook/callback", to: "sessions#create", via: [:get, :post]
   root "application#home"
 
 end
