@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
 
-    include ApplicationHelper
-
     def home
         if logged_in?
             @user = current_user
@@ -13,4 +11,18 @@ class ApplicationController < ActionController::Base
         #if not logged in show not logged in page home.html.erb
         #either way home requires access to sammich posts to show
     end
+
+    private
+
+    def logged_in?
+        !!current_user
+    end
+
+    helper_method :logged_in?
+
+    def current_user
+        @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
+    end
+    helper_method :current_user
+
 end
