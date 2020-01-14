@@ -10,6 +10,12 @@ class User < ActiveRecord::Base
         username
     end
 
+    #instead of using an id will use site.com/users/#username to show profile
+    #The to_param method on ActiveRecord objects uses, by default, just the
+    #ID of the object. By putting this code in your model, you're overwriting the
+    #ActiveRecord default, so when you link to a User, it will use the username for the
+    #paramater instead of the id
+
     def self.from_omniauth(auth)
         where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
     end
@@ -19,16 +25,8 @@ class User < ActiveRecord::Base
             user.provider = auth["provider"]
             user.uid = auth["uid"]
             user.username = auth["info"]["name"].gsub!(" ", "")
-            user.password = SecureRandom.urlsafe_base64
+            user.password = SecureRandom.urlsafe_base64 #assigns random password to fulfill other validations
+            #password can be unknown to user because real validation and security is done through facebook
         end
     end
-
-    #def password_validator
-        #if self.provider == nil
-            #validates :password, length: {minimum: 8, maximum: 30}
-        #end
-
-   #end
-
-    #instead of using an id will use site.com/users/#username to show profile
 end
