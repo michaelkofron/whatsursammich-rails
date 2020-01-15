@@ -14,6 +14,9 @@
         <%= f.text_field :image_url %>
 
         <%= f.hidden_field :user_id, value: @user.id %>
+
+        #have to send the user id as a hidden form because
+        #it wont do it automatically
     
         <%= f.submit %>
     <% end %>
