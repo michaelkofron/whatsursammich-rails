@@ -22,6 +22,12 @@ class UsersController < ApplicationController
         #to_param in users model
     end
 
+    def sammiches
+        @user = User.find_by_username(params[:id])
+        #find the current user from the current URL username
+        @sams = @user.sams
+        #find all of their sammiches
+    end
 
     private
 

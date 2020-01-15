@@ -3,6 +3,7 @@ class CreateSams < ActiveRecord::Migration[6.0]
     create_table :sams do |t|
       t.string :name
       t.text :description
+      t.string :image_url
       t.integer :user_id
     end
   end
