@@ -32,46 +32,16 @@
                 <p>sort by: <a href="#">popular</a> | <a href="#">new</a></p>
                 <a id="sotw" href="#">🏆sammich of the week🏆</a>
             </div>
+        <% @sams.each do |sam| %>
             <div class="post">
-                <img src="https://i.imgur.com/N6MA28B.jpg" class="image">
-                <a id="post-title" href="#">Beeno Burger With Cheese</a>
+                <img src=<%= sam.image_url %> class="image">
+                <a id="post-title" href="#"><%= sam.name %></a>
                 <a id="review" href="#">read & write reviews</a>
                 <p id="rating">⭐⭐⭐</p>
                 <p id="numbers">16 💬</p> 
-                <a id="by" href="#">by User</a>
+                <a id="by" href="#"><%= sam.user.username %></a>
             </div>
-            <div class="post">
-                <img src="https://i.imgur.com/D7oNff4.jpg" class="image">
-                <a id="post-title" href="#">Cheesy Cheebo Burger</a>
-                <a id="review" href="#">read & write reviews</a>
-                <p id="rating">⭐⭐⭐⭐⭐</p>
-                <p id="numbers">23 💬</p> 
-                <a id="by" href="#">by User</a>
-            </div>
-            <div class="post">
-                <img src="https://i.imgur.com/R8YPPbh.jpg" class="image">
-                <a id="post-title" href="#">Grilled Onion Beeno Burger</a>
-                <a id="review" href="#">read & write reviews</a>
-                <p id="rating">⭐</p>
-                <p id="numbers">39 💬</p> 
-                <a id="by" href="#">by User</a>
-            </div>
-            <div class="post">
-                <img src="https://i.imgur.com/992yl7J.jpg" class="image">
-                <a id="post-title" href="#">Crazy Monkey Style Cheedo BLT</a>
-                <a id="review" href="#">read & write reviews</a>
-                <p id="rating">⭐⭐</p>
-                <p id="numbers">4 💬</p> 
-                <a id="by" href="#">by User</a>
-            </div>
-            <div class="post">
-                <img src="https://i.imgur.com/VvQ7G2Z.jpg" class="image">
-                <a id="post-title" href="#">Delicious Crushed Sandwhich</a>
-                <a id="review" href="#">read & write reviews</a>
-                <p id="rating">⭐⭐⭐⭐</p>
-                <p id="numbers">18 💬</p> 
-                <a id="by" href="#">by User</a>
-            </div>
+        <% end %> 
             <div class="footer">
                 <p>Made with 🥪 by Michael Kofron</p>
             </div>
