@@ -89,6 +89,10 @@ div.username h3 {
     text-align: center;
 }
 
+a {
+    text-decoration-color: seagreen;
+}
+
 img.image {
     max-width: 150px;
     max-height: 125px;
@@ -103,7 +107,7 @@ img.image {
     .body {
         display: grid;
         height: 30%;
-        width: 98%;
+        width: 90%;
         margin: auto;
         background-color: white;
         border-radius: 5px;
@@ -114,7 +118,7 @@ img.image {
         display: grid;
         height: 30%;
         position: relative;
-        width: 98%;
+        width: 90%;
         margin: auto;
         margin-bottom: 10px;
         background-color: white;
@@ -156,8 +160,8 @@ img.image {
 
     .picture-title {
         display: grid;
-        height: 400px;
-        width: 700px;
+        height: 200px;
+        width: 400px;
         margin: auto;
         background-color: white;
         margin-bottom: 10px;

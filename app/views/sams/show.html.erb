@@ -1,3 +1,74 @@
-<h1> sam path </h1>
-<h1><%= @sam_name %></h1>
-<h1><%= @sam.description %></h1>
+
+<html>
+<head>
+    <%= stylesheet_link_tag 'page_style.css', media: 'print, screen' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+</head>
+<body>
+    <a class= "home" href="#">
+        <div class="logo" type="button" action="#">
+            <h1>whatsursammich🥪</h1>
+        </div>
+    </a>
+
+    <div class="picture-title">
+        <div class="title">
+            <h1 id="title"><%= @sam.name %></h1>
+            <img src=<%= @sam.image_url %> class="image">
+            <a href="<%= user_path(@sam.user) %>"><h1 id="title">by <%= @sam.user.username %></h1></a>
+        </div>
+    </div>
+
+    <div class="body">
+        <p><%= @sam.description %>
+    </div>
+
+    <div class="review-title">
+        <h2><a href="#">Write a review</a></h2>
+    </div>
+    <br>
+
+    <div class="review-title">
+        <h2><a href="#">professorignatius</a> rated this ⭐⭐⭐⭐⭐ </h2>
+    </div>
+
+    <div class="review">
+        <div class="text">
+            <p>"I thought the crust was absolutely amazing, so moist and perfect. The tomatos pair amazing with the havarti cheese. I thought the crust was absolutely amazing, so moist and perfect. The tomatos pair amazing with the havarti cheese."</p>
+        </div>
+        
+        
+        
+    </div> 
+
+    <div class="review-title">
+        <h2><a href="#">User</a> rated this ⭐⭐⭐⭐⭐ </h2>
+    </div>
+    
+    <div class="review">
+        <div class="text">
+            <p>"I thought the crust was absolutely amazing, so moist and perfect. The tomatos pair amazing with the havarti cheese."</p>
+        </div>
+            
+            
+            
+    </div> 
+
+    <div class="review-title">
+        <h2><a href="#">User</a> rated this ⭐⭐⭐⭐⭐ </h2>
+    </div>
+        
+    <div class="review">
+        <div class="text">
+            <p>"I thought the crust was absolutely amazing, so moist and perfect. The tomatos pair amazing with the havarti cheese."</p>
+        </div>
+                
+                
+                
+    </div> 
+
+        
+
+</body>
+</html>

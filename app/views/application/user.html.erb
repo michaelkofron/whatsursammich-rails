@@ -35,7 +35,7 @@
         <% @sams.each do |sam| %>
             <div class="post">
                 <img src=<%= sam.image_url %> class="image">
-                <a id="post-title" href="<%= sam_path(sam.name.gsub!(" ", "-")) %>"><%= sam.name %></a>
+                <a id="post-title" href="<%= sam_path(sam.name.gsub!(" ", "-")) %>"><%= sam.name.gsub!("-", " ") %></a>
                 <a id="review" href="#">read & write reviews</a>
                 <p id="rating">⭐⭐⭐</p>
                 <p id="numbers">16 💬</p> 
