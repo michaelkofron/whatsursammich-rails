@@ -25,7 +25,10 @@ class SamsController < ApplicationController
     end
 
     def show
-        #individual sammich page
+        @sam_name = params[:id].gsub("-", " ")
+        #have to take the dashes out of sammich param[:id] from the route to find sammich by its real nam
+        #which is a name with spaces
+        @sam = Sam.find_by(name: @sam_name)
     end
 
     def update 
