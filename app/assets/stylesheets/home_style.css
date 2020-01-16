@@ -24,6 +24,10 @@
     box-shadow: 5px 5px 5px -5px grey;
     }
 
+    h4 {
+        margin-left: 400px;
+    }
+
   .body .post:last-child {
     border-bottom: none;
     box-shadow: 5px 5px 5px -5px grey;

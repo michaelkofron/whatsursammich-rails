@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#login"
   match "/auth/facebook/callback", to: "sessions#create", via: [:get, :post]
   root "application#home"
-  resources :sams, path: "sammiches", except: :index
+  post "sammiches/:id/delete", to: "sams#destroy", as: :destroy_sam
+  resources :sams, path: "sammiches", except: [:index, :destroy]
+  
 
 
 end

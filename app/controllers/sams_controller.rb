@@ -1,5 +1,7 @@
 class SamsController < ApplicationController
 
+    skip_before_action :verify_authenticity_token, only: :destroy
+    
     def new 
 
         if logged_in?
@@ -37,6 +39,8 @@ class SamsController < ApplicationController
 
     def destroy
         #can delete a sammich
+        Sam.find_by(name: params[:id]).destroy
+        redirect_to root_path
     end
 
     private 
