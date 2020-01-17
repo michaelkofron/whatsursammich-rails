@@ -1,0 +1,14 @@
+<h1> Edit Sam </h1>
+
+<%= form_for(@sam) do |f| %>
+    <label>Sammich Name:</label><br>
+    <%= f.text_field :name %><br>
+
+    <label>Description</label><br>
+    <%= f.text_area :description %><br>
+
+    <label>Image URL</label><br>
+    <%= f.text_field :image_url %>
+
+    <%= f.submit "edit" %>
+<% end %>

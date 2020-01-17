@@ -24,6 +24,13 @@ class SamsController < ApplicationController
 
     def edit
         #edits sammich, will need an edit view with text already inside
+
+        @sam_name = params[:id].gsub!("-", " ")
+        @sam = Sam.find_by(name: @sam_name)
+
+        if @sam.user.id != session[:user_id]
+            redirect_to root_path
+        end
     end
 
     def show
@@ -34,7 +41,9 @@ class SamsController < ApplicationController
     end
 
     def update 
-        #post of edit
+        @sam = Sam.find(params[:id])
+        @sam.update(name: params[:sam][:name], description: params[:sam][:description], image_url: params[:sam][:image_url])
+        redirect_to sam_path(@sam.name.gsub!(" ", "-"))
     end
 
     def destroy
