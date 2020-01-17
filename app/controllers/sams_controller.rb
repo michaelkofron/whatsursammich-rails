@@ -14,12 +14,15 @@ class SamsController < ApplicationController
     end
 
     def create
-        @sam = Sam.create(sam_params)
-        
-        @user = User.find_by_id(session[:user_id])
+        @sam = Sam.new(sam_params)
 
-
-        redirect_to user_sammiches_path(@user.username)
+        if @sam.valid?
+            @sam.save
+            @user = User.find_by_id(session[:user_id])
+            redirect_to user_sammiches_path(@user.username)
+        else
+            redirect_to new_sam_path
+        end
     end
 
     def edit
