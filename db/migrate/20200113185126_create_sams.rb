@@ -5,6 +5,8 @@ class CreateSams < ActiveRecord::Migration[6.0]
       t.text :description
       t.string :image_url
       t.integer :user_id
+
+      t.timestamps
     end
   end
 end

@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
     def home
 
         @users = User.all
-        @sams = Sam.all
+        @sams = Sam.newest
         
         if logged_in?
             @user = current_user

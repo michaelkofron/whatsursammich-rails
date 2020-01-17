@@ -2,6 +2,8 @@ class Sam < ActiveRecord::Base
     belongs_to :user
     #has_many :points
 
+    scope :newest, -> { order('created_at DESC') }
+
     validates :name, :presence => true, :uniqueness => {:case_sensitive => false}, :length => {minimum: 5, maximum: 40}
     validates_format_of :name, :with => /^[A-Za-z0-9]+ [A-Za-z0-9]+$/, :multiline => true
     #can include numbers or letters, must contain space, but cant have spaces at beginning or end
