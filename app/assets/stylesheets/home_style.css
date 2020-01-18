@@ -8,13 +8,17 @@
   }
 
   body, html {
-    height: 100vh;
+    height: 100%;
     background: rgb(90,159,128);
     background: -moz-linear-gradient(133deg, rgba(90,159,128,1) 10%, rgba(208,232,140,1) 100%);
-    background: -webkit-linear-gradient(133deg, rgba(90,159,128,1) 10%, rgba(208,232,140,1) 100%);
+    background: -webkit-linear-gradient(133deg, rgba(90,159,128,1) 10%, rgb(177, 214, 76) 100%);
     background: linear-gradient(133deg, rgba(90,159,128,1) 10%, rgba(208,232,140,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5a9f80",endColorstr="#d0e88c",GradientType=1);
+    background-size: auto;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
+
 
   .body > div {
     border-bottom-left-radius: 5px;

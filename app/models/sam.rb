@@ -3,6 +3,7 @@ class Sam < ActiveRecord::Base
     #has_many :points
 
     scope :newest, -> { order('created_at DESC') }
+    #active record scope method, used to display newest on homepage
 
     validates :name, :presence => true, :uniqueness => {:case_sensitive => false}, :length => {minimum: 5, maximum: 40}
     validates_format_of :name, :with => /^[A-Za-z0-9]+ [A-Za-z0-9]+$/, :multiline => true

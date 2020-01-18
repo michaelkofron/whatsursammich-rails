@@ -9,6 +9,11 @@
 user = User.create(username: "Michael", password: "michaelkofron")
 
 
-6.times do 
-    Sam.create(name: "Cheebo Sam", description: "The wonderful sammiches weeooo", image_url: "https://i.imgur.com/1Qawm1Ng.jpg", user_id: 1)
-end
+
+Sam.create(name: "Cheebo Sam", description: "The wonderful sammiches weeooo", image_url: "https://i.imgur.com/1Qawm1Ng.jpg", user_id: 1)
+Sam.create(name: "Cheebo Sams", description: "The wonderful sammiches w", image_url: "https://i.imgur.com/1Qawm1Ng.jpg", user_id: 1)
+Sam.create(name: "Deeno Sam", description: "The wondersdfweeooo", image_url: "https://i.imgur.com/1Qawm1Ng.jpg", user_id: 1)
+Sam.create(name: "Cheebodon Sam", description: "The woasdmiches weeooo", image_url: "https://i.imgur.com/1Qawm1Ng.jpg", user_id: 1)
+Sam.create(name: "Cheebodinga", description: "The wonasdasdasdderful sammiches weeooo", image_url: "https://i.imgur.com/1Qawm1Ng.jpg", user_id: 1)
+Sam.create(name: "Cheebo Samaka", description: "Thebeenosweeooo", image_url: "https://i.imgur.com/1Qawm1Ng.jpg", user_id: 1)
+Sam.create(name: "Cheebo Samwhich", description: "The wondsdfsammiches weeooo", image_url: "https://i.imgur.com/1Qawm1Ng.jpg", user_id: 1)
