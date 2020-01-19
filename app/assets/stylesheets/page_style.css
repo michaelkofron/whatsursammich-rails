@@ -101,6 +101,15 @@ a {
     text-decoration-color: seagreen;
 }
 
+a.review-body {
+    text-decoration: none;
+    color: black;
+}
+
+div.review:hover {
+    transform: scale(0.98);
+}
+
 img.image {
     max-width: 150px;
     max-height: 125px;

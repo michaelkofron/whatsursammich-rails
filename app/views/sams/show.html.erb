@@ -34,6 +34,7 @@
             <div class="review-title">
                 
                 <h2><a href="<%= user_path(review.user) %>"><%= review.user.username %></a>
+                    rated this
                 <% if review.rating == 1 %>
                     ⭐
                 <% elsif review.rating == 2 %>
@@ -49,9 +50,11 @@
             </div>
 
                 <div class="review">
-                    <div class="text">
-                        <p>"<%= review.body%>"</p>
-                    </div>
+                    <a class="review-body" href="<%= sam_review_path(sam_id: @sam.name, id: review.id) %>">
+                        <div class="text">
+                            <p>"<%= review.body%>"</p>
+                        </div>
+                    </a> 
                 </div>
             </div>
         <% end %>
