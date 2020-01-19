@@ -1,5 +1,6 @@
 class Sam < ActiveRecord::Base
     belongs_to :user
+    has_many :reviews
     #has_many :points
 
     scope :newest, -> { order('created_at DESC') }

@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
     has_secure_password
 
     has_many :sams
-
-    #has_many :reviews
+    has_many :reviews
+    
     #has_many :posts
     #has_many :reviewpoints, through: :reviews
     #has_many :postpoints, through: :posts

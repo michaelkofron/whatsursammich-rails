@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_15_001323) do
+ActiveRecord::Schema.define(version: 2020_01_18_220946) do
 
   create_table "ingredients", force: :cascade do |t|
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "body"
+    t.integer "rating"
+    t.integer "user_id"
+    t.integer "sam_id"
   end
 
   create_table "sams", force: :cascade do |t|

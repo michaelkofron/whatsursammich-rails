@@ -1,0 +1,25 @@
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<h1>New Review For <%= @sammich.name %></h1>
+
+<% array = [1, 2, 3, 4, 5] %>
+
+<%= form_for @review, :url => sam_reviews_path do |f| %>
+    <label>What do you think?</label><br>
+    <%= f.text_area :body %>
+    <br>
+
+    <label>What would you rate this sammich?</label><br>
+    <%= f.select :rating, options_for_select(array.each)%>
+
+    <%= f.hidden_field :user_id, value: @user.id %>
+    <%= f.hidden_field :sam_id, value: @sammich.id %>
+
+    <%= f.submit %>
+
+    
+
+<% end %>
+

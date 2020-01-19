@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <a class= "home" href="#">
-        <div class="logo" type="button" action="#">
+    <a class= "home" href="<%= root_path %>">
+        <div class="logo" type="button" action="<%= root_path %>">
             <h1>whatsursammich🥪</h1>
         </div>
     </a>
@@ -25,48 +25,37 @@
     </div>
 
     <div class="review-title">
-        <h2><a href="#">Write a review</a></h2>
+        <h2><a href="<%= new_sam_review_path(@sam.name.gsub!(" ", "-")) %>">Write a review</a></h2>
     </div>
     <br>
 
-    <div class="review-title">
-        <h2><a href="#">professorignatius</a> rated this ⭐⭐⭐⭐⭐ </h2>
-    </div>
-
-    <div class="review">
-        <div class="text">
-            <p>"I thought the crust was absolutely amazing, so moist and perfect. The tomatos pair amazing with the havarti cheese. I thought the crust was absolutely amazing, so moist and perfect. The tomatos pair amazing with the havarti cheese."</p>
-        </div>
-        
-        
-        
-    </div> 
-
-    <div class="review-title">
-        <h2><a href="#">User</a> rated this ⭐⭐⭐⭐⭐ </h2>
-    </div>
-    
-    <div class="review">
-        <div class="text">
-            <p>"I thought the crust was absolutely amazing, so moist and perfect. The tomatos pair amazing with the havarti cheese."</p>
-        </div>
-            
-            
-            
-    </div> 
-
-    <div class="review-title">
-        <h2><a href="#">User</a> rated this ⭐⭐⭐⭐⭐ </h2>
-    </div>
-        
-    <div class="review">
-        <div class="text">
-            <p>"I thought the crust was absolutely amazing, so moist and perfect. The tomatos pair amazing with the havarti cheese."</p>
-        </div>
+    <% if @sam.reviews != nil %>
+        <% @sam.reviews.each do |review| %>
+            <div class="review-title">
                 
-                
-                
-    </div> 
+                <h2><a href="<%= user_path(review.user) %>"><%= review.user.username %></a>
+                <% if review.rating == 1 %>
+                    ⭐
+                <% elsif review.rating == 2 %>
+                    ⭐⭐
+                <% elsif review.rating == 3 %>
+                    ⭐⭐⭐
+                <% elsif review.rating == 4 %>
+                    ⭐⭐⭐⭐
+                <% elsif review.rating == 5 %>
+                    ⭐⭐⭐⭐⭐
+                <% end %>
+                </h2>
+            </div>
+
+                <div class="review">
+                    <div class="text">
+                        <p>"<%= review.body%>"</p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    <% end %>
 
         
 
