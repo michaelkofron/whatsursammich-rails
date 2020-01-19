@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   post "sammiches/:id/delete", to: "sams#destroy", as: :destroy_sam
   resources :sams, path: "sammiches", except: [:index, :destroy] do
     resources :reviews, only: [:new, :create, :show]
-    post "reviews/:id", to: "reviews#destroy", as: :destroy_review
+    #post "reviews/:id", to: "reviews#destroy", as: :destroy_review
   end
 
   
