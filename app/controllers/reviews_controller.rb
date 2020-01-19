@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
             end
 
             if @sammich.user.id == @user.id || truth
-                redirect_to sam_path(params[:sam_id])
+                redirect_to sam_path(params[:sam_id].gsub!(" ", "-"))
             end
             #if the sammich is the user's own sammich they cannot write a review
             #if a user previously wrote a review for this sammich they cannot write another
