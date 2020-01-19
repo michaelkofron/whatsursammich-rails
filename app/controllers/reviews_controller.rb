@@ -5,6 +5,22 @@ class ReviewsController < ApplicationController
             @review = Review.new
             @sammich = Sam.find_by(name: params[:sam_id].gsub!("-", " "))
             @user = User.find_by(id: session[:user_id])
+            truth = false
+            #truth of whether or not the user has reviewed this sammich
+            #it is false until proven true
+            #presumed innocent until guilty
+
+            @sammich.reviews.each do |review|
+                if review.user == @user
+                    truth = true
+                end
+            end
+
+            if @sammich.user.id == @user.id || truth
+                redirect_to sam_path(params[:sam_id])
+            end
+            #if the sammich is the user's own sammich they cannot write a review
+            #if a user previously wrote a review for this sammich they cannot write another
         else
             redirect_to login_path
         end

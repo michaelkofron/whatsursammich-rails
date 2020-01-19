@@ -36,9 +36,29 @@
             <div class="post">
                 <img src=<%= sam.image_url %> class="image">
                 <a id="post-title" href="<%= sam_path(sam.name.gsub!(" ", "-")) %>"><%= sam.name.gsub!("-", " ") %></a>
-                <a id="review" href="#">read & write reviews</a>
-                <p id="rating">⭐⭐⭐</p>
-                <p id="numbers">16 💬</p> 
+                <a id="review" href="#">
+                    <% if sam.reviews.count == 0 %>
+                        write the first review
+                    <% else %>
+                        read & write reviews
+                    <% end %>
+                </a>
+                <p id="rating">
+                    <% if sam.reviews.average(:rating) == nil %>
+                        NO REVIEWS
+                    <% elsif sam.reviews.average(:rating).round == 1 %>
+                        ⭐
+                    <% elsif sam.reviews.average(:rating).round == 2 %>
+                        ⭐⭐
+                    <% elsif sam.reviews.average(:rating).round == 3 %>
+                        ⭐⭐⭐
+                    <% elsif sam.reviews.average(:rating).round == 4 %>
+                        ⭐⭐⭐⭐
+                    <% elsif sam.reviews.average(:rating).round == 5 %>
+                        ⭐⭐⭐⭐⭐
+                    <% end %>
+                </p>
+                <p id="numbers"><%= sam.reviews.count %> 💬</p> 
                 <a id="by" href="<%= user_path(sam.user) %>"><%= sam.user.username %></a>
 
                 <% if sam.user.id == session[:user_id] %>
