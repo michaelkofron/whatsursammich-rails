@@ -13,7 +13,7 @@ class UsersController < ApplicationController
             redirect_to root_path
             #redirect_to user_path(@user) #routes to your profile
         else
-            redirect_to users_path
+            render :new
         end
     end
 

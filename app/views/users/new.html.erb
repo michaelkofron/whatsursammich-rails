@@ -29,6 +29,12 @@
                 <%= f.submit %>
             <% end %>
             <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+            <br>
+            <br>
+
+            <% if @user.errors.any? %>
+                <h2 id="text"><%= @user.errors.full_messages.first %></h2>
+            <% end %>
         </div>
 
         <div class="footer">
