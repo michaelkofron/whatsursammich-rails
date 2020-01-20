@@ -13,12 +13,4 @@ class Sam < ActiveRecord::Base
     validates :description, :presence => true, :uniqueness => true, :length => {minimum: 10, maximum: 2000 }
     validates :image_url, :presence => true, :url => true
 
-    def self.popularity
-        count = 0
-        if self.reviews
-            count = self.reviews.count
-        else 
-            count
-        end
-    end
 end
