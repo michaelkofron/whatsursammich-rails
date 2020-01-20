@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
 </head>
 <body>
-    <a href="#">
-        <div class="logo" type="button" action="/">
+    <a href="/">
+        <div class="logo" type="button" action="#">
             <h1>whatsursammich🥪</h1>
         </div>
     </a>
@@ -31,10 +31,11 @@
             <%= link_to('Log in with Facebook!', '/auth/facebook') %>
             <br>
             <br>
-
-            <% if @user.errors.any? %>
-                <h2 id="text"><%= @user.errors.full_messages.first %></h2>
-            <% end %>
+            <div>
+                <% if @errors != nil %>
+                    <p><%= @errors.first %></p>
+                <% end %>
+            </div>
         </div>
 
         <div class="footer">

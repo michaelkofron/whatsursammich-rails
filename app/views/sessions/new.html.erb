@@ -6,7 +6,7 @@
 </head>
 <body>
     <a href="/">
-        <div class="logo" type="button" action="#">
+        <div class="logo" type="button" action="/">
             <h1>whatsursammich🥪</h1>
         </div>
     </a>
@@ -26,6 +26,12 @@
                 <% end %>
             </div>
             <%= link_to('Log in with Facebook!', '/auth/facebook') %>
+            <br>
+            <br>
+
+            <% if @error != nil %>
+                <p><%= @error %></p>
+            <% end %>
         </div>
 
         <div class="footer">

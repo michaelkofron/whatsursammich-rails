@@ -13,6 +13,7 @@ class UsersController < ApplicationController
             redirect_to root_path
             #redirect_to user_path(@user) #routes to your profile
         else
+            @errors = @user.errors.full_messages
             render :new
         end
     end
