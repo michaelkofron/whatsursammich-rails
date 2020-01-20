@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
 
         @users = User.all
         @sams = Sam.newest
+        #activerecord, scope
         
         if logged_in?
             @user = current_user
@@ -14,6 +15,17 @@ class ApplicationController < ActionController::Base
         #if logged in show logged in page session_home.html.erb
         #if not logged in show not logged in page home.html.erb
         #either way home requires access to sammich posts to show
+    end
+
+    def popular
+        @users = User.all
+        @sams = Sam.popular
+
+        if logged_in?
+            @user = current_user
+        else
+            @user = nil
+        end
     end
 
     private

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#destroy"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#login"
+  get "/popular", to: "application#popular"
   match "/auth/facebook/callback", to: "sessions#create", via: [:get, :post]
   root "application#home"
   post "sammiches/:id/delete", to: "sams#destroy", as: :destroy_sam

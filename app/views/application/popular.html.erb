@@ -1,5 +1,3 @@
-
-
 <html>
 <head>
     <%= stylesheet_link_tag 'home_style.css', media: 'print, screen' %>
@@ -15,16 +13,34 @@
     
     <div class="full">
         <div class="body">
-            <a id="head" href="login">
-                <div class="nav">
-                    <p>login</p>
-                </div>
-            </a> 
-            <a id="head" href="signup">
-                <div class="nav">
-                    <p>signup</p>
-                </div>
-            </a>
+            <% if @user != nil %>
+                <a id="head" href="/logout">
+                    <div class="nav">
+                        <p>logout</p>
+                    </div>
+                </a> 
+                <a id="head" href="<%= user_path(@user) %>">
+                    <div class="nav">
+                        <p>your profile</p>
+                    </div>
+                </a>
+                <a id="head" href="<%= new_sam_path %>">
+                    <div class="nav">
+                        <p>create a new sammich</p>
+                    </div>
+                </a>
+            <% else %>
+                <a id="head" href="login">
+                    <div class="nav">
+                        <p>login</p>
+                    </div>
+                </a> 
+                <a id="head" href="signup">
+                    <div class="nav">
+                        <p>signup</p>
+                    </div>
+                </a>
+            <% end %>
             <div class="sort">
                 <p>sort by: <a href="/popular">popular</a> | <a href="/">new</a></p>
                 <a id="sotw" href="#">🏆sammich of the week🏆</a>
@@ -35,7 +51,7 @@
                 <a id="post-title" href="<%= sam_path(sam.name.gsub!(" ", "-")) %>"><%= sam.name.gsub!("-", " ") %></a>
                 <a id="review" href="<%= sam_path(sam.name.gsub!(" ", "-")) %>">
                     <% if sam.reviews.count == 0 %>
-                        write the first review
+                        write the first review 
                     <% else %>
                         read & write reviews
                     <% end %>
@@ -62,7 +78,7 @@
                     <form class="delete" action="<%= destroy_sam_path(sam.name) %>" method="post">
                         <button type="submit" class="btn-link">Delete</button>
                     </form>
-                    <form class="edit" action="<%= edit_sam_path(sam.name.gsub!(" ", "-")) %>" method="get">
+                    <form class="edit" action="<%= edit_sam_path(sam.name) %>" method="get">
                         <button type="submit" class="btn-link">Edit</button>
                     </form>
                 <% end %>
@@ -77,14 +93,3 @@
 
 
 
-
-
-
-
-
-
-
-
-
-</body>
-</html>

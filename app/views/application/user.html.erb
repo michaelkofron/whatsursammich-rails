@@ -29,16 +29,16 @@
                 </div>
             </a>
             <div class="sort">
-                <p>sort by: <a href="#">popular</a> | <a href="#">new</a></p>
+                <p>sort by: <a href="/popular">popular</a> | <a href="/new">new</a></p>
                 <a id="sotw" href="#">🏆sammich of the week🏆</a>
             </div>
         <% @sams.each do |sam| %>
             <div class="post">
                 <img src=<%= sam.image_url %> class="image">
                 <a id="post-title" href="<%= sam_path(sam.name.gsub!(" ", "-")) %>"><%= sam.name.gsub!("-", " ") %></a>
-                <a id="review" href="#">
+                <a id="review" href="<%= sam_path(sam.name.gsub!(" ", "-")) %>">
                     <% if sam.reviews.count == 0 %>
-                        write the first review
+                        write the first review 
                     <% else %>
                         read & write reviews
                     <% end %>
@@ -65,7 +65,7 @@
                     <form class="delete" action="<%= destroy_sam_path(sam.name) %>" method="post">
                         <button type="submit" class="btn-link">Delete</button>
                     </form>
-                    <form class="edit" action="<%= edit_sam_path(sam.name.gsub!(" ", "-")) %>" method="get">
+                    <form class="edit" action="<%= edit_sam_path(sam.name) %>" method="get">
                         <button type="submit" class="btn-link">Edit</button>
                     </form>
                 <% end %>
