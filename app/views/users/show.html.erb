@@ -4,4 +4,22 @@
     <%= "User Not Found" %>
 <% else %>
     <%= @user.username %>
+    <% @sam_point_count = 0 %>
+    <% if @user.spoints %>
+        <% @user.spoints.each do |x| %>
+            <% @sam_point_count += x.value %>
+        <% end %>
+        <br>
+        <%= "#{@sam_point_count} " + "Sammich Points" %>
+    <% end %>
+    <% if @user.rpoints %>
+        <% @review_point_count = 0 %>
+        <% @user.rpoints.each do |x| %>
+            <% @review_point_count += x.value %>
+        <% end %>
+        <br>
+        <%= "#{@review_point_count} " + "Review Points" %> 
+    <% end %>
+
+
 <% end %>

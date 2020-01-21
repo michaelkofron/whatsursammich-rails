@@ -19,6 +19,7 @@ class SamsController < ApplicationController
         if @sam.valid?
             @sam.save
             @user = User.find_by_id(session[:user_id])
+            @spoint = Spoint.create(sam_id: @sam.id, user_id: @user.id, value: 100)
             redirect_to user_sammiches_path(@user.username)
         else
             redirect_to new_sam_path
@@ -51,7 +52,7 @@ class SamsController < ApplicationController
 
     def destroy
         #can delete a sammich
-        Sam.find_by(name: params[:id]).destroy
+        Sam.find_by(name: params[:id].gsub!("-", " ")).destroy
         redirect_to root_path
     end
 

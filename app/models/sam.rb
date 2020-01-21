@@ -1,7 +1,7 @@
 class Sam < ActiveRecord::Base
     belongs_to :user
     has_many :reviews
-    #has_many :points
+    has_many :spoints
 
     scope :newest, -> { order('created_at DESC') }
     scope :popular, -> { Sam.all.sort_by{ |a| -a.reviews.count} }

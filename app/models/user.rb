@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
 
     has_many :sams
     has_many :reviews
+
+    has_many :spoints, through: :sams
+
+    has_many :rpoints, through: :reviews
     
     #has_many :posts
     #has_many :reviewpoints, through: :reviews

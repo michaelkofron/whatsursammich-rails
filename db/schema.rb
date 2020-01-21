@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_18_220946) do
+ActiveRecord::Schema.define(version: 2020_01_21_184311) do
 
   create_table "ingredients", force: :cascade do |t|
   end
@@ -22,6 +22,12 @@ ActiveRecord::Schema.define(version: 2020_01_18_220946) do
     t.integer "sam_id"
   end
 
+  create_table "rpoints", force: :cascade do |t|
+    t.integer "review_id"
+    t.integer "user_id"
+    t.integer "value"
+  end
+
   create_table "sams", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -29,6 +35,12 @@ ActiveRecord::Schema.define(version: 2020_01_18_220946) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "spoints", force: :cascade do |t|
+    t.integer "sam_id"
+    t.integer "user_id"
+    t.integer "value"
   end
 
   create_table "users", force: :cascade do |t|
