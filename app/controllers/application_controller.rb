@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
         else
             @user = nil
         end
+        render "home"
     end
 
     private
