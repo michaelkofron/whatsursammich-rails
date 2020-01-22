@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
             @sam = Sam.find_by(name: params[:sam_id])
             @value = @review.rating * 10
             @spoint = Spoint.create(sam_id: @sam.id, user_id: @sam.user.id, value: @value)
-            #sam maker gets sam points if someone writes a review for them, based on star rating
+            #sam maker gets sam points if someone writes a review for them, based on star rating * 10
             @rpoint = Rpoint.create(review_id: @review.id, user_id: session[:user_id], value: 10)
             #user gets 10 review points for writing a review
             redirect_to sam_path(@sam.name.gsub!(" ", "-"))
@@ -41,7 +41,6 @@ class ReviewsController < ApplicationController
             @errors = @review.errors.full_messages
             @sammich = Sam.find_by(name: params[:sam_id])
             @user = @review.user
-            #redirect_to new_sam_review_path(params[:sam_id].gsub!(" ", "-"))
             render :new
         end
     end

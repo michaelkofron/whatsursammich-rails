@@ -1,7 +1,5 @@
-<h1>Sams</h1>
+<h1>Create a Sammich</h1>
 
-
-    <p> SAMS</p>
 
     <%= form_for(@sam) do |f| %>
         <label>Sammich Name:</label><br>
@@ -14,9 +12,6 @@
         <%= f.text_field :image_url %>
 
         <%= f.hidden_field :user_id, value: @user.id %>
-
-        #have to send the user id as a hidden form because
-        #it wont do it automatically
     
         <%= f.submit %>
     <% end %>
