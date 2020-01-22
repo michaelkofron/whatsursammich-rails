@@ -8,13 +8,7 @@ class ApplicationController < ActionController::Base
         
         if logged_in?
             @user = current_user
-            render "user"
-        else
-            render "visitor"
         end
-        #if logged in show logged in page session_home.html.erb
-        #if not logged in show not logged in page home.html.erb
-        #either way home requires access to sammich posts to show
     end
 
     def popular

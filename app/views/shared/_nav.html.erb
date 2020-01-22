@@ -1,0 +1,28 @@
+<% if @user != nil %>
+    <a id="head" href="/logout">
+        <div class="nav">
+            <p>logout</p>
+        </div>
+    </a> 
+    <a id="head" href="<%= user_path(@user) %>">
+        <div class="nav">
+            <p>your profile</p>
+        </div>
+    </a>
+    <a id="head" href="<%= new_sam_path %>">
+        <div class="nav">
+            <p>create a new sammich</p>
+        </div>
+    </a>
+<% else %>
+    <a id="head" href="login">
+        <div class="nav">
+            <p>login</p>
+        </div>
+    </a> 
+    <a id="head" href="signup">
+        <div class="nav">
+            <p>signup</p>
+        </div>
+    </a>
+<% end %>
