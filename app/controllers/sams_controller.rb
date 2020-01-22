@@ -15,14 +15,16 @@ class SamsController < ApplicationController
 
     def create
         @sam = Sam.new(sam_params)
+        @user = User.find_by_id(session[:user_id])
 
         if @sam.valid?
             @sam.save
-            @user = User.find_by_id(session[:user_id])
-            @spoint = Spoint.create(sam_id: @sam.id, user_id: @user.id, value: 100)
+            #@user = User.find_by_id(session[:user_id])
+            @spoint = Spoint.create(sam_id: @sam.id, user_id: @user.id, value: 50)
             redirect_to user_sammiches_path(@user.username)
         else
-            redirect_to new_sam_path
+            @errors = @sam.errors.full_messages
+            render :new
         end
     end
 

@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_01_21_184311) do
 
-  create_table "ingredients", force: :cascade do |t|
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.string "body"
     t.integer "rating"

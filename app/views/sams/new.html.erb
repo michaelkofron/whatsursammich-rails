@@ -20,3 +20,8 @@
     
         <%= f.submit %>
     <% end %>
+
+    <% if @errors != nil %>
+        <p><%= @errors.first %></p>
+    <% end %>
+
