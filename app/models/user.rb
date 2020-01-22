@@ -31,6 +31,8 @@ class User < ActiveRecord::Base
         where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
     end
 
+    #tries to find user with facebook login, if no user is found then one is created
+
     def self.create_from_omniauth(auth)
 
         random_username = auth["info"]["name"].gsub!(" ", "") + "#{rand(1..3000)}"
