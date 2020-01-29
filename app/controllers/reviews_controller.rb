@@ -50,6 +50,16 @@ class ReviewsController < ApplicationController
 
     end
 
+    def index
+
+        if params[:sam_id]
+            @sammich = Sam.find_by(name: params[:sam_id].gsub!("-", " "))
+            @reviews = @sammich.reviews
+        else
+            @reviews = Review.all
+        end
+    end
+
     private
     
     def review_params

@@ -14,8 +14,9 @@ Rails.application.routes.draw do
   match "/auth/facebook/callback", to: "sessions#create", via: [:get, :post]
   root "application#home"
   post "sammiches/:id/delete", to: "sams#destroy", as: :destroy_sam
+  get "/reviews", to: "reviews#index"
   resources :sams, path: "sammiches", except: [:index, :destroy] do
-    resources :reviews, only: [:new, :create, :show]
+    resources :reviews, only: [:new, :create, :show, :index]
     #post "reviews/:id", to: "reviews#destroy", as: :destroy_review
   end
 

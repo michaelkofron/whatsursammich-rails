@@ -23,6 +23,7 @@ class ApplicationController < ActionController::Base
         render "home"
     end
 
+
     private
 
     def logged_in?

@@ -1,0 +1,9 @@
+<% if @reviews %>
+    <% @reviews.each do |review| %>
+        <%= review.body %>
+        <%= review.rating %>
+        <%= review.user_id %>
+        <%= review.sam_id %>
+    <% end %>
+<% end %>
+    

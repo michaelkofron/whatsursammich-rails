@@ -18,7 +18,7 @@ class SamsController < ApplicationController
         @user = User.find_by_id(session[:user_id])
 
         if @sam.valid?
-            @sam.save
+            @sam.save #redundant
             #@user = User.find_by_id(session[:user_id])
             @spoint = Spoint.create(sam_id: @sam.id, user_id: @user.id, value: 50)
             redirect_to user_sammiches_path(@user.username)
