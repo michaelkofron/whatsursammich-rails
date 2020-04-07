@@ -1,17 +1,7 @@
-# README
+# Whatsursammich - Gamified Rails Social Media
 
-This is a Sammich based social media/game called Whatsursammich.
+Whatsursammich is a simple Rails based social media where users submit their own creations for review. Users can create an account on-site or through Facebook using OmniAuth. Reviews are averaged and given a start rating.
 
-Run on your own machine:
+![](public/phone.png)
 
-clone this repository
 
-cd into it and run "bundle install"
-
-run "rails db:migrate"
-
-run "rails s"
-
-You are now greeted with an emtpy page. Make accounts, make sammiches, write reviews. Facebook login is not available to cloned repositories because Omniauth is not provided any App ID or security key. This is stored in a .env file but is unavailable through git ignore for security purposes.
-
-Site will be available in the future on the web.
